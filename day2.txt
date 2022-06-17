@@ -1,0 +1,52 @@
+DevOps & SRE
+=======================
+
+				DevOps Team
+=============================================
+PLAN + CODING + TESTING + DEPLOY + MONITORING
+---------------------------------------------
+
+SRE Team
+---------------------------------------------
+OPS team
+------------
+		- Work with Engineering Team
+		- SLO - SLA - Eliminating a TOIL
+		- BRING engineering approch in ur work
+			- PLAN - CODE - TEST - Deploy
+		- Coding for infra - ops - monitoring - deploy
+
+username - centos
+key - https://github.com/devopsschool-training-notes/SRE-Datadog
+
+Kartik Nayakar					15.207.112.33
+Sahil Pugalia					65.0.124.237
+Praveen Nair						52.66.239.131
+Bandhanadham Nikhil Chandrapaul	35.154.103.156
+Oshien Jindal					65.0.19.126
+Manish Kumar Gupta				13.232.148.141
+Manoj Gupta Gudla				15.207.115.54
+mohammed intekhab				13.126.235.58
+Shashank Bhandari				65.1.106.74
+
+---------------
+65.0.138.201
+
+Step 1 - Register at Datadog
+Step 2 - Install Datadog infra agent
+- https://www.devopsschool.com/blog/how-to-install-datadog-agent-in-centos/
+Step 3 - Install Docker
+- https://www.devopsschool.com/blog/docker-installation-and-configurations/
+Step 4 - enable process monitoring
+- https://www.devopsschool.com/blog/how-to-enable-live-process-monitoring-in-datadog-agent/
+Step 5 - Enable Docker monitoring
+- https://www.devopsschool.com/blog/how-to-enable-docker-container-monitoring-in-datadog-agent/
+--------------------------
+
+
+
+
+
+
+
+
