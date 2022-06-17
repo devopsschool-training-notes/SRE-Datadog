@@ -44,9 +44,61 @@ Step 5 - Enable Docker monitoring
 --------------------------
 
 
+Step 1- install git
+$ yum install git -y
+
+Step 2- install docker
+- https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+Step 2- install docker compose
+- https://www.devopsschool.com/blog/docker-compose-install-and-configuration-tutorial/
+
+Step 3 - Clone repo - https://github.com/observability-university/ecommerce-workshop-datadog
+
+$ git clone https://github.com/observability-university/ecommerce-workshop-datadog
+$ ls
+$ cd ecommerce-workshop-datadog
+
+Step 4 - Gather DD_SITE and DD_API_KEY
+
+DD_SITE = us5.datadoghq.com (Check the datadog url)
+| us1.datadoghq.com | us2.datadoghq.com | us3.datadoghq.com
+us4.datadoghq.com | eu1.datadoghq.com
+
+DD_API_KEY= c116232b3474326cbcc99c9ccfac498b
+Integration => APIS => API Keys => Copy or Create key
+
+Step 4 - Add following into Agent services of each docker-compose file
+DD_SITE=us5.datadoghq.com 
 
 
+Step 5 - Change DD_SITE to docker compose file
 
 
+$ cd ecommerce-workshop-datadog
+$ sudo yum -y install patch
+$ make recreate-frontend-code
+$ cd deploy/docker-compose
+$ 
 
 
+APM | SYNTHECTIC MONITORING | RUM
+
+APM
+$ docker-compose-broken-instrumented.yml
+$ docker-compose-fixed-instrumented.yml
+
+Step 6 - run docker compose file - BROKEN
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres DD_API_KEY=c116232b3474326cbcc99c9ccfac498b DD_SITE="us5.datadoghq.com" docker-compose -f docker-compose-broken-instrumented.yml up -d
+
+Step 7 - How to generate traffic to app?
+$ cd ecommerce-workshop/traffic-replay
+$ docker build -t traffic-replay .
+$ docker run -i -t --net=docker-compose_default --rm traffic-replay
+
+Step 8 - run docker compose file - Fixed
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres DD_API_KEY=c116232b3474326cbcc99c9ccfac498b DD_SITE="us5.datadoghq.com" docker-compose -f docker-compose-fixed-instrumented.yml up -d
+
+
+Step 9 - run docker compose file - LATEST
+$ POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres DD_API_KEY=c116232b3474326cbcc99c9ccfac498b DD_SITE="us5.datadoghq.com" docker-compose -f docker-compose-latest.yml up -d
